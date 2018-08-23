@@ -2,6 +2,7 @@ var startgame = document.getElementById("startgame");
 var restartgame = document.getElementById("restartgame");
 var allcards = document.getElementById("allcards");
 var cardplay = document.getElementsByClassName("cardplay");
+var textbuttonstart = document.getElementById("textandbuttonstart");
 allcards.style.display="none";
 startgame.onclick = function() {gameStart("start")};
 restartgame.style.display="none";
@@ -17,10 +18,13 @@ function gameStart(e) {
   if (i >= 1) {
     startgame.style.display="none";
     allcards.style.display="inline-block";
-    document.getElementById("textandbuttonstart").classList.add("col-md-4");
+    textbuttonstart.classList.add("col-md-4");
+    textbuttonstart.classList.remove("col-12");
     document.getElementById("timerstart").value = i;
   } else {
     allcards.style.display="none";
+    textbuttonstart.classList.add("col-12");
+    textbuttonstart.classList.remove("col-md-4");
     restartgame.style.display="inline-block";
     document.getElementById("timerstart").value = "Temps écoulé!";
   }
@@ -35,8 +39,6 @@ function gameStart(e) {
     i = 61;
     vale = "";
     clearTimeout(startgamevar);
-    randomtabl = Math.floor(Math.random() * 4);
-    console.log(randomtabl);
     return i;
   }
 

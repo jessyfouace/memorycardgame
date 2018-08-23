@@ -98,8 +98,8 @@ textarea {
    ========================================================================== */
 
 img[src="img/bg.png"]{
-  width: 100%;
-  height: 100vh;
+  width: 95%;
+  height: 96vh;
   position: absolute;
 }
 
@@ -118,6 +118,7 @@ li:hover {
 .buttonrestart {
   background: inherit;
   border: none;
+  cursor: pointer;
 }
 
 @font-face {
