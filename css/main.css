@@ -108,7 +108,7 @@ li {
   display: inline-block;
 }
 
-li:hover {
+img:hover {
   transform: scale(1.1);
   transition: transform 0.4s;
   cursor: pointer;
@@ -118,6 +118,9 @@ li:hover {
 .buttonrestart {
   background: inherit;
   border: none;
+}
+
+.buttonrestart:hover {
   cursor: pointer;
 }
 
