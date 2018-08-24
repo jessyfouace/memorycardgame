@@ -5,15 +5,17 @@ var cardplay = document.getElementsByClassName("cardplay");
 var timerstart = document.getElementById("timerstart");
 var textbuttonstart = document.getElementById("textandbuttonstart");
 var changetext = document.getElementById("changetext");
+var bcard = document.getElementsByClassName("bcard");
 allcards.style.display="none";
 startgame.onclick = function() {gameStart("start")};
 restartgame.style.display="none";
 restartgame.onclick = function() {gameStart("restart")};
-i = 61;
+i = 41;
 var tabImg = ["url('img/carte1.png')", "url('img/carte1.png')", "url('img/carte2.png')", "url('img/carte2.png')", "url('img/carte3.png')", "url('img/carte3.png')", "url('img/carte4.png')", "url('img/carte4.png')", "url('img/carte5.png')", "url('img/carte5.png')", "url('img/carte6.png')", "url('img/carte6.png')", "url('img/carte7.png')", "url('img/carte7.png')", "url('img/carte8.png')", "url('img/carte8.png')"];
 var TabImgRandom;
 var newtable = [];
 var tablepush = [];
+var d;
 
 function gameStart(e) {
   vale = e;
@@ -47,32 +49,54 @@ function gameStart(e) {
       tablepush.push(stockage)
       tabImg.splice (TabImgRandom, 1);
     }
-    document.getElementById("card1").style.backgroundImage = tablepush[0];
-    document.getElementById("card2").style.backgroundImage = tablepush[1];
-    document.getElementById("card3").style.backgroundImage = tablepush[2];
-    document.getElementById("card4").style.backgroundImage = tablepush[3];
-    document.getElementById("card5").style.backgroundImage = tablepush[4];
-    document.getElementById("card6").style.backgroundImage = tablepush[5];
-    document.getElementById("card7").style.backgroundImage = tablepush[6];
-    document.getElementById("card8").style.backgroundImage = tablepush[7];
-    document.getElementById("card9").style.backgroundImage = tablepush[8];
-    document.getElementById("card10").style.backgroundImage = tablepush[9];
-    document.getElementById("card11").style.backgroundImage = tablepush[10];
-    document.getElementById("card12").style.backgroundImage = tablepush[11];
-    document.getElementById("card9").style.backgroundImage = tablepush[12];
-    document.getElementById("card10").style.backgroundImage = tablepush[13];
-    document.getElementById("card11").style.backgroundImage = tablepush[14];
-    document.getElementById("card12").style.backgroundImage = tablepush[15];
+    for(cardal=1;cardal<=16;cardal++){
+    	var c = 'card'+cardal;
+      d = document.getElementById(c).style.backgroundImage = tablepush[cardal - 1];
+    }
   }
 
   if (vale == "restart") {
     restartgame.style.display="none";
     changetext.innerHTML = "Click on the cards and try to find the pairs"
-    i = 61;
+    i = 41;
     vale = "";
     clearTimeout(startgamevar);
+    for (var e = 0; e < 16 ; e++) {
+      TabImgRandom = Math.floor(Math.random() * tabImg.length);
+      stockage = Array(tabImg[TabImgRandom]);
+      newtable = Array.from(stockage);
+      tablepush.push(stockage)
+      tabImg.splice (TabImgRandom, 1);
+    }
+    for(cardal=1;cardal<=16;cardal++){
+    	var c = 'card'+cardal;
+      d = document.getElementById(c).style.backgroundImage = tablepush[cardal - 1];
+    }
+    for(delopa=1;delopa<=16;delopa++){
+    	var delopa1 = 'bcard'+delopa;
+      delopa2 = document.getElementById(delopa1).style.opacity = "1";
+    }
     return i;
   }
 
   return vale;
+}
+
+var vie = 0;
+function getId(monId) {
+  vie++;
+  if (vie < 3) {
+    var clickmyid = monId;
+    var stylebyid = document.getElementById(clickmyid);
+    stylebyid.style.opacity="0";
+    if (stylebyid.parentElement.backgroundImage == stylebyid.parentElement.backgroundImage) {
+      console.log("gregerge");
+      vie = 0;
+      return vie;
+    } else {
+      vie = 0;
+      stylebyid.style.opacity="1";
+      return vie;
+    }
+  }
 }
