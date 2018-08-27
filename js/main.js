@@ -10,6 +10,7 @@ allcards.style.display="none";
 startgame.onclick = function() {gameStart("start")};
 restartgame.style.display="none";
 restartgame.onclick = function() {gameStart("restart")};
+// timer
 i = 61;
 var tabImg = ["url('img/carte1.png')", "url('img/carte1.png')", "url('img/carte2.png')", "url('img/carte2.png')", "url('img/carte3.png')", "url('img/carte3.png')", "url('img/carte4.png')", "url('img/carte4.png')", "url('img/carte5.png')", "url('img/carte5.png')", "url('img/carte6.png')", "url('img/carte6.png')", "url('img/carte7.png')", "url('img/carte7.png')", "url('img/carte8.png')", "url('img/carte8.png')"];
 var TabImgRandom;
@@ -20,15 +21,18 @@ var trials = 0;
 
 function gameStart(e) {
   vale = e;
+  // timer --
   i--;
+  // Interval for timer did -- all 1 second
   var startgamevar = setTimeout(gameStart, 1000);
+  // create table for stock the random img
   var stockage = [];
 
+  // if timer second is more than 1 or = at one AND if i == 0
   if (i >= 1) {
     startgame.style.display="none";
     allcards.style.display="inline-block";
     textbuttonstart.classList.add("col-6");
-    textbuttonstart.classList.remove("mx-auto");
     timerstart.value = "Time left " + i + "s";
   } else if (i == 0) {
     allcards.style.display="none";
@@ -57,14 +61,18 @@ function gameStart(e) {
     return vale;
   }
 
+  // RESTART OPTION
   if (vale == "restart") {
+    // stock all image on table
     tabImg = ["url('img/carte1.png')", "url('img/carte1.png')", "url('img/carte2.png')", "url('img/carte2.png')", "url('img/carte3.png')", "url('img/carte3.png')", "url('img/carte4.png')", "url('img/carte4.png')", "url('img/carte5.png')", "url('img/carte5.png')", "url('img/carte6.png')", "url('img/carte6.png')", "url('img/carte7.png')", "url('img/carte7.png')", "url('img/carte8.png')", "url('img/carte8.png')"];
+    // Reset the tabl for random img
     tablepush = [];
     restartgame.style.display="none";
     changetext.innerHTML = "Click on the cards and try to find the pairs"
     i = 61;
     vale = "";
     clearTimeout(startgamevar);
+    // recreate random image for tablepush
     for (var e = 0; e < 16 ; e++) {
       TabImgRandom = Math.floor(Math.random() * tabImg.length);
       stockage = Array(tabImg[TabImgRandom]);
@@ -73,10 +81,12 @@ function gameStart(e) {
       tabImg.splice (TabImgRandom, 1);
       trials = 0;
     }
+    // set the random image to background of div
     for(cardal=1;cardal<=16;cardal++){
     	var c = 'card'+cardal;
       d = document.getElementById(c).style.backgroundImage = tablepush[cardal - 1];
     }
+    // reset opacity
     for(delopa=1;delopa<=16;delopa++){
     	var delopa1 = 'bcard'+delopa;
       delopa2 = document.getElementById(delopa1).style.opacity = "1";
@@ -95,9 +105,11 @@ var changechildren;
 var changechildren2;
 var search = 0;
 
+// function for take the id of parent and child
 function getId(monId) {
   vie++;
 
+  // All card = 1 life, you need 2 card pear round so you need 2 life, and reset it if first click !== second click
   if (vie == 1) {
     safeguardfirstclick = monId;
     var changeopa = document.getElementById(safeguardfirstclick);
@@ -123,6 +135,7 @@ function getId(monId) {
   }
 }
 
+// function for compare the first and second click
 function compare() {
   if (tablforcompare[0] == tablforcompare[1]) {
     vie = 0;
@@ -136,6 +149,7 @@ function compare() {
     changechildren.style.opacity="1";
     changechildren.style.visibility="visible";
   }
+  // if you got all good result
   if (search == 8) {
     vie = 0;
     search = 0;
