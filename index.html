@@ -15,39 +15,6 @@
 
 <body>
 
-  <!-- <div class="container col-12 pt-3 pt-md-2 m-0">
-    <img src="img/bg.png" alt="backgroundimg">
-    <div class="row col-12 pt-4 p-0 m-0">
-      <div id="textandbuttonstart" class="mt-0 mt-md-5 col-12 text-center hearthstonefamily">
-        <p id="deletetext">Welcome to Memory cards</p>
-        <p id="changetext">Click on the button for start the game</p>
-        <img id="startgame" src="img/start.png" alt="img">
-        <input id="timerstart" class="buttontimer d-block mx-auto" type="button" value=""/>
-        <input id="restartgame" class="buttonrestart mx-auto" type="button" value="Restart"/>
-      </div>
-      <div id="allcards" class="row col-12 col-md-8 p-0 m-0">
-        <ul class="col-12 p-0 m-0 list-unstyled text-center">
-          <li class="col-2 p-0 m-0"><img id="card1" class="cardplay col-12 p-0 m-0" src="img/carte1.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card2" class="cardplay col-12 p-0 m-0" src="img/carte1.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card3" class="cardplay col-12 p-0 m-0" src="img/carte2.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card4" class="cardplay col-12 p-0 m-0" src="img/carte2.png" alt="img"></li>
-        </ul>
-        <ul class="col-12 p-0 m-0 list-unstyled text-center">
-          <li class="col-2 p-0 m-0"><img id="card5" class="cardplay col-12 p-0 m-0" src="img/carte3.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card6" class="cardplay col-12 p-0 m-0" src="img/carte3.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card7" class="cardplay col-12 p-0 m-0" src="img/carte4.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card8" class="cardplay col-12 p-0 m-0" src="img/carte4.png" alt="img"></li>
-        </ul>
-        <ul class="col-12 p-0 m-0 list-unstyled text-center">
-          <li class="col-2 p-0 m-0"><img id="card9" class="cardplay col-12 p-0 m-0" src="img/carte5.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card10" class="cardplay col-12 p-0 m-0" src="img/carte5.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card11" class="cardplay col-12 p-0 m-0" src="img/carte6.png" alt="img"></li>
-          <li class="col-2 p-0 m-0"><img id="card12" class="cardplay col-12 p-0 m-0" src="img/carte6.png" alt="img"></li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
-
   <div class="container col-12 p-0 m-0">
     <div class="row col-12 p-0 m-0">
       <div id="textandbuttonstart" class="mx-auto mt-0 mt-md-5 col-12 col-md-6 text-center hearthstonefamily p-0 m-0">
@@ -60,58 +27,58 @@
       <div id="allcards" class="row col-12 col-md-6 p-0 m-0" style="background: #bb9f73; height: 100vh;">
         <div class="row col-12 p-0 m-0 pt-4 list-unstyled text-center">
           <div id="card1" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard1" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard1" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card2" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard2" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard2" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card3" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard3" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard3" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card4" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard4" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard4" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
         </div>
         <div class="row col-12 p-0 m-0 list-unstyled text-center">
           <div id="card5" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard5" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard5" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card6" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard6" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard6" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card7" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard7" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard7" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card8" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard8" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard8" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
         </div>
         <div class="row col-12 p-0 m-0 list-unstyled text-center">
           <div id="card9" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard9" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard9" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card10" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard10" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard10" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card11" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard11" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard11" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card12" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard12" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard12" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
         </div>
         <div class="row col-12 p-0 m-0 list-unstyled text-center">
           <div id="card13" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard13" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard13" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card14" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard14" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard14" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card15" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard15" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard15" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
           <div id="card16" class="cardplay col-2 p-0 m-0 mx-auto" style="background-size: 90%; background-repeat: no-repeat;">
-            <img id="bcard16" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.id)" style="background: #bb9f73;"/>
+            <img id="bcard16" class="bcard col-12 p-0 m-0" src="img/doscartes.png" onclick="getId(this.parentNode.id)" style="background: #bb9f73;"/>
           </div>
         </div>
       </div>
