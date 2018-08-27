@@ -63,6 +63,8 @@ function gameStart(e) {
 
   // RESTART OPTION
   if (vale == "restart") {
+    trials = 0;
+    document.getElementById("trials").innerHTML = "Trials: " + trials;
     // stock all image on table
     tabImg = ["url('img/carte1.png')", "url('img/carte1.png')", "url('img/carte2.png')", "url('img/carte2.png')", "url('img/carte3.png')", "url('img/carte3.png')", "url('img/carte4.png')", "url('img/carte4.png')", "url('img/carte5.png')", "url('img/carte5.png')", "url('img/carte6.png')", "url('img/carte6.png')", "url('img/carte7.png')", "url('img/carte7.png')", "url('img/carte8.png')", "url('img/carte8.png')"];
     // Reset the tabl for random img
@@ -79,7 +81,6 @@ function gameStart(e) {
       newtable = Array.from(stockage);
       tablepush.push(stockage)
       tabImg.splice (TabImgRandom, 1);
-      trials = 0;
     }
     // set the random image to background of div
     for(cardal=1;cardal<=16;cardal++){
