@@ -10,12 +10,13 @@ allcards.style.display="none";
 startgame.onclick = function() {gameStart("start")};
 restartgame.style.display="none";
 restartgame.onclick = function() {gameStart("restart")};
-i = 51;
+i = 61;
 var tabImg = ["url('img/carte1.png')", "url('img/carte1.png')", "url('img/carte2.png')", "url('img/carte2.png')", "url('img/carte3.png')", "url('img/carte3.png')", "url('img/carte4.png')", "url('img/carte4.png')", "url('img/carte5.png')", "url('img/carte5.png')", "url('img/carte6.png')", "url('img/carte6.png')", "url('img/carte7.png')", "url('img/carte7.png')", "url('img/carte8.png')", "url('img/carte8.png')"];
 var TabImgRandom;
 var newtable = [];
 var tablepush = [];
 var d;
+var trials = 0;
 
 function gameStart(e) {
   vale = e;
@@ -53,12 +54,15 @@ function gameStart(e) {
     	var c = 'card'+cardal;
       d = document.getElementById(c).style.backgroundImage = tablepush[cardal - 1];
     }
+    return vale;
   }
 
   if (vale == "restart") {
+    tabImg = ["url('img/carte1.png')", "url('img/carte1.png')", "url('img/carte2.png')", "url('img/carte2.png')", "url('img/carte3.png')", "url('img/carte3.png')", "url('img/carte4.png')", "url('img/carte4.png')", "url('img/carte5.png')", "url('img/carte5.png')", "url('img/carte6.png')", "url('img/carte6.png')", "url('img/carte7.png')", "url('img/carte7.png')", "url('img/carte8.png')", "url('img/carte8.png')"];
+    tablepush = [];
     restartgame.style.display="none";
     changetext.innerHTML = "Click on the cards and try to find the pairs"
-    i = 51;
+    i = 61;
     vale = "";
     clearTimeout(startgamevar);
     for (var e = 0; e < 16 ; e++) {
@@ -67,6 +71,7 @@ function gameStart(e) {
       newtable = Array.from(stockage);
       tablepush.push(stockage)
       tabImg.splice (TabImgRandom, 1);
+      trials = 0;
     }
     for(cardal=1;cardal<=16;cardal++){
     	var c = 'card'+cardal;
@@ -75,10 +80,10 @@ function gameStart(e) {
     for(delopa=1;delopa<=16;delopa++){
     	var delopa1 = 'bcard'+delopa;
       delopa2 = document.getElementById(delopa1).style.opacity = "1";
+      delopa3 = document.getElementById(delopa1).style.visibility = "visible";
     }
     return i;
   }
-
   return vale;
 }
 
@@ -88,7 +93,6 @@ var vie = 0;
 var tablforcompare = [];
 var changechildren;
 var changechildren2;
-var trials = 0;
 var search = 0;
 
 function getId(monId) {
@@ -134,28 +138,13 @@ function compare() {
   }
   if (search == 8) {
     vie = 0;
+    search = 0;
     i = "You win";
     allcards.style.display="none";
     textbuttonstart.classList.remove("col-6");
     restartgame.style.display="inline-block";
     changetext.innerHTML = "Click on restart for restart a game"
     timerstart.value = "You Win, Congratulations";
-    for (var e = 0; e < 16 ; e++) {
-      TabImgRandom = Math.floor(Math.random() * tabImg.length);
-      stockage = Array(tabImg[TabImgRandom]);
-      newtable = Array.from(stockage);
-      tablepush.push(stockage)
-      tabImg.splice (TabImgRandom, 1);
-    }
-    for(cardal=1;cardal<=16;cardal++){
-    	var c = 'card'+cardal;
-      d = document.getElementById(c).style.backgroundImage = tablepush[cardal - 1];
-    }
-    for(delopa=1;delopa<=16;delopa++){
-    	var delopa1 = 'bcard'+delopa;
-      delopa2 = document.getElementById(delopa1).style.opacity = "1";
-      delvisi = document.getElementById(delopa1).style.visibility = "visible";
-    }
     return i;
   }
 }
