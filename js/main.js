@@ -88,6 +88,7 @@ var vie = 0;
 var tablforcompare = [];
 var changechildren;
 var changechildren2;
+var trials = 0;
 var search = 0;
 
 function getId(monId) {
@@ -104,6 +105,7 @@ function getId(monId) {
     tablforcompare.push(fortablcompare);
   }
   if (vie == 2) {
+    trials++;
     clickmyid = monId;
     var stylebyid = document.getElementById(clickmyid);
     var children2 = stylebyid.children[0];
@@ -111,6 +113,7 @@ function getId(monId) {
     changechildren2.style.opacity="0";
     changechildren2.style.visibility="hidden";
     var test = stylebyid.style.backgroundImage;
+    document.getElementById("trials").innerHTML = "Trials: " + trials;
     tablforcompare.push(test);
     setTimeout(compare, 1000);
   }
@@ -137,6 +140,22 @@ function compare() {
     restartgame.style.display="inline-block";
     changetext.innerHTML = "Click on restart for restart a game"
     timerstart.value = "You Win, Congratulations";
+    for (var e = 0; e < 16 ; e++) {
+      TabImgRandom = Math.floor(Math.random() * tabImg.length);
+      stockage = Array(tabImg[TabImgRandom]);
+      newtable = Array.from(stockage);
+      tablepush.push(stockage)
+      tabImg.splice (TabImgRandom, 1);
+    }
+    for(cardal=1;cardal<=16;cardal++){
+    	var c = 'card'+cardal;
+      d = document.getElementById(c).style.backgroundImage = tablepush[cardal - 1];
+    }
+    for(delopa=1;delopa<=16;delopa++){
+    	var delopa1 = 'bcard'+delopa;
+      delopa2 = document.getElementById(delopa1).style.opacity = "1";
+      delvisi = document.getElementById(delopa1).style.visibility = "visible";
+    }
     return i;
   }
 }
