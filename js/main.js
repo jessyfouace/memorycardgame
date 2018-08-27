@@ -99,6 +99,7 @@ function getId(monId) {
     var children = changeopa.children[0];
     changechildren = children;
     changechildren.style.opacity="0";
+    changechildren.style.visibility="hidden";
     var fortablcompare = changeopa.style.backgroundImage;
     tablforcompare.push(fortablcompare);
   }
@@ -108,6 +109,7 @@ function getId(monId) {
     var children2 = stylebyid.children[0];
     changechildren2 = children2;
     changechildren2.style.opacity="0";
+    changechildren2.style.visibility="hidden";
     var test = stylebyid.style.backgroundImage;
     tablforcompare.push(test);
     setTimeout(compare, 1000);
@@ -123,7 +125,9 @@ function compare() {
     vie = 0;
     tablforcompare = [];
     changechildren2.style.opacity="1";
+    changechildren2.style.visibility="visible";
     changechildren.style.opacity="1";
+    changechildren.style.visibility="visible";
   }
   if (search == 8) {
     vie = 0;
